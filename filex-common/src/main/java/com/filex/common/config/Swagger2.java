@@ -10,6 +10,7 @@ import springfox.documentation.service.ApiInfo;
 import springfox.documentation.spi.DocumentationType;
 import springfox.documentation.spring.web.plugins.Docket;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
+
 /*
  * 连接特定的 DNS 后缀: 
 描述: vmxnet3 Ethernet Adapter #3
@@ -33,10 +34,10 @@ public class Swagger2 {
 	@Bean
 	public Docket createRestApi() {
 		return new Docket(DocumentationType.SWAGGER_2).apiInfo(apiInfo()).select()
-				.apis(RequestHandlerSelectors.basePackage("com.example.demo")).paths(PathSelectors.any()).build();
+				.apis(RequestHandlerSelectors.basePackage("com.filex.admin")).paths(PathSelectors.any()).build();
 	}
 
 	private ApiInfo apiInfo() {
-		return new ApiInfoBuilder().title("demo").description("数据库地址: http://http://192.168.20.118:8088/h2-console <br/> 用户名: root<br/>密码: fcbss@123").termsOfServiceUrl("http://192.168.218.71:8088/h2-console").version("1.0").build();
+		return new ApiInfoBuilder().title("demo").description("").termsOfServiceUrl("").version("1.0").build();
 	}
 }
